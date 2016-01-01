@@ -1,0 +1,67 @@
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:400,700);
+body {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+#chat-window {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border-radius: 1em;
+  height: 25em;
+  min-height: 25em;
+  min-width: 20em;
+  max-width: 40em;
+  background-color: #838ce8;
+  color: #232c68;  
+}
+
+#chat-banner {
+  text-align: center;
+}
+
+#chat-banner h1 {
+  margin: 0;
+}
+
+#chat-banner span {
+  font-size: 0.80em;
+}
+
+#chat-text {
+  padding: 1em;
+  border-radius: 1em;  
+  height: 100%;
+  background-color: #d2dfff;
+  overflow-y: auto;
+}
+
+#chat-text p {
+  margin: 0; padding: 0;
+}
+
+#chat-text p span.person {
+  color: #636cc8;
+}
+
+#chat-text p span.text {
+  color: blue;
+}
+
+#chat-input-window {
+  background-color: #c1b8ff;
+  text-align: center;
+    border-radius: 1em;
+}
+
+#chat-input {
+  width: 95%;
+  background-color: #d3d4ff;
+  border: 1px solid #8d88ff;
+}
+

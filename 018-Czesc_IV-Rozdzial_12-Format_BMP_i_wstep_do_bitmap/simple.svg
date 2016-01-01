@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="750" height="750" version="1.1">
+  <defs>
+    <radialGradient id="grad1" cx="50%" cy="10%" r="70%" fx="50%" fy="20%">
+      <stop offset="0%" style="stop-color:#fdf850;stop-opacity:1;" />
+      <stop offset="100%" style="stop-color:#f44d04;stop-opacity:1" />    
+    </radialGradient>
+    <radialGradient id="grad2" cx="50%" cy="50%" r="80%" fx="50%" fy="50%">
+      <stop offset="0%" style="stop-color:#fd9150;stop-opacity:1;" />
+      <stop offset="100%" style="stop-color:#762502;stop-opacity:1" />
+    </radialGradient>
+  </defs>
+  <circle cx="322" cy="192" r="150" fill="url(#grad1)" />
+  <path d="m 399.08184,236.37053 -57.82771,-7.55289 -36.69668,49.63786
+             -10.68653,-57.33139 -58.5483,-19.56168 51.22308,-27.87986
+             0.51183,-61.72764 42.34413,40.10069 58.86464,-18.5881
+             -25.05297,52.66345 z"
+        transform="matrix(0.43067757,-0.48151554,
+                          0.48151554,0.43067757,
+                          88.38552,251.01537)"
+        fill="url(#grad2)"/> 
+</svg>

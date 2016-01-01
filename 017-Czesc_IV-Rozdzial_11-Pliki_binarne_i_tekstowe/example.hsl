@@ -1,0 +1,16 @@
+#include "standard-types.hsl"
+
+#pragma displayname("Example (Zrozumiec Programowanie)" );
+#pragma fileextensions(".bin") ;
+#pragma byteorder(little_endian)
+
+typedef struct data_set_st {
+  UBYTE set_count;
+  DWORD data[set_count];
+} data_set;
+
+typedef struct header_st {
+  USHORT count;
+  data_set [count];    
+} header;
+
