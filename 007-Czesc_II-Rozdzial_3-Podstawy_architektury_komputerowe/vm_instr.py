@@ -166,8 +166,7 @@ def VJMP(vm, args):
 
 
 def VJMPR(vm, args):
-  vm.pc.v = (vm.pc.v + vm.reg(args[0]).v) & 0xffff
-
+  vm.pc.v = vm.reg(args[0]).v & 0xffff
 
 def VCALL(vm, args):
   vm.sp.v = vm.sp.v - 4
