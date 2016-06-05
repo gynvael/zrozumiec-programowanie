@@ -110,23 +110,27 @@ dw (%1 - ($ + 2))
 db 0x23
 dw (%1 - ($ + 2))
 %endmacro
-%define vjl vjc
+%define vjl vjc  ; Deprecated, use vjb.
+%define vjb vjc
 
 %macro vjnc 1
 db 0x24
 dw (%1 - ($ + 2))
 %endmacro
-%define vjge vjnc
+%define vjge vjnc  ; Deprecated, use vjae.
+%define vjae vjnc
 
-%macro vjle 1
+%macro vjbe 1
 db 0x25
 dw (%1 - ($ + 2))
 %endmacro
+%define vjle vjbe  ;  Deprecated, use vjbe.
 
-%macro vjg 1
+%macro vja 1
 db 0x26
 dw (%1 - ($ + 2))
 %endmacro
+%define vjg vja  ; Deprecated, use vja.
 
 %macro vpush 1
 db 0x30, %1
