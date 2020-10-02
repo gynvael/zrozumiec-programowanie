@@ -92,7 +92,7 @@ def VXOR(vm, args):
 
 
 def VNOT(vm, args):
-  vm.reg(args[0]).v = vm.reg(args[0]).v ^ 0xffffffff
+  vm.reg(args[0]).v = (vm.reg(args[0]).v ^ 0xffffffff) + 0x1
 
 
 def VSHL(vm, args):
