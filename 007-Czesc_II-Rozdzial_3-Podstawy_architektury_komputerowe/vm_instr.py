@@ -5,11 +5,11 @@ from struct import unpack
 
 # Helper functions.
 def to_dw(args):
-  return unpack("<H", str(args))[0]
+  return unpack("<H", bytes(args))[0]
 
 
 def to_dd(args):
-  return unpack("<I", str(args))[0]
+  return unpack("<I", bytes(args))[0]
 
 
 def VMOV(vm, args):
@@ -231,7 +231,7 @@ def VINB(vm, args):
 
 def VIRET(vm, args):
   tmp_sp = vm.sp.v
-  for rid in xrange(16, -1, -1):
+  for rid in range(16, -1, -1):
     v = vm.mem.fetch_dword(tmp_sp)
     if v is None:
       vm.interrupt(vm.INT_GENERAL_ERROR)
