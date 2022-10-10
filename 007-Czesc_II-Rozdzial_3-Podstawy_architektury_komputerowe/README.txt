@@ -1,5 +1,8 @@
 Mini-emulator maszyny wirtualnej opisanej w książce "Zrozumieć Programowanie".
 
+Wersja 1.1
+- Wsparcie dla Python3
+
 Wersja 1.00.2
 - Poprawiony błąd w implementacji instrukcji vjmpr (skok był relatywny zamiast
   bezwzględnego). Podziękowania dla Jana K. za zgłoszenie błędu.
