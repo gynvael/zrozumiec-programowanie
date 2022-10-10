@@ -1,5 +1,6 @@
 #!/usr/bin/python
 # watch pep8 --show-pep8 --ignore=E111,E114,E241,W391 ./vm.py
+import codecs
 import collections
 import os
 import sys
@@ -27,7 +28,7 @@ class VMInstance(object):
   MASKABLE_INTS = [8, 9]
 
   def __init__(self):
-    self.r = [VMGeneralPurposeRegister() for _ in xrange(16)]
+    self.r = [VMGeneralPurposeRegister() for _ in range(16)]
     self.fr = 0
     self.sp = self.r[14]
     self.pc = self.r[15]
@@ -39,7 +40,7 @@ class VMInstance(object):
     self.cr = {}
 
     # Interrupt registers.
-    for creg in xrange(self.CREG_INT_FIRST, self.CREG_INT_LAST + 1):
+    for creg in range(self.CREG_INT_FIRST, self.CREG_INT_LAST + 1):
       self.cr[creg] = 0xffffffff
 
     self.cr[self.CREG_INT_CONTROL] = 0  # Maskable interrupts disabled.
@@ -70,10 +71,10 @@ class VMInstance(object):
     """Terminates the virtual machine on critical error.
     """
     self.terminated = True
-    print "The virtual machine entered an erroneous state and is terminating."
-    print "Register values at termination:"
+    print ("The virtual machine entered an erroneous state and is terminating.")
+    print ("Register values at termination:")
     for ri, r in enumerate(vm.r):
-      print "  r%u = %x" % (ri, r.v)
+      print ("  r%u = %x" % (ri, r.v))
 
   def interrupt(self, i):
     """Add an interrupt to the interrupt queue.
@@ -168,8 +169,8 @@ class VMInstance(object):
     handler = self.opcodes[opcode][self.INSTR_HANDLER]
     # Uncomment this line to get a dump of executed instructions.
     #print("%.4x: %s\t%s" % (self.pc.v, 
-    #                        handler.func_name, 
-    #                        str(argument_bytes).encode("hex")))
+    #                        handler.__name__, 
+    #                        codecs.encode(argument_bytes, "hex")))
     self.pc.v += 1 + length
     handler(self, argument_bytes)
 
@@ -188,7 +189,7 @@ __all__ = [VMInstance]
 
 if __name__ == '__main__':
   if len(sys.argv) != 2:
-    print "usage: vm.py <filename>"
+    print ("usage: vm.py <filename>")
     sys.exit(1)
 
   vm = VMInstance()
