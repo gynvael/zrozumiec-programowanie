@@ -67,7 +67,7 @@ def VDIV(vm, args):
   if vm.reg(args[1]).v == 0:
     vm.interrupt(vm.INT_DIVISION_ERROR)
   else:
-    vm.reg(args[0]).v = (vm.reg(args[0]).v /
+    vm.reg(args[0]).v = (vm.reg(args[0]).v //
                          vm.reg(args[1]).v)
 
 
